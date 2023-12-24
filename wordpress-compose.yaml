@@ -35,6 +35,9 @@ services:
     image: phpmyadmin:latest
     restart: unless-stopped
     links:
-      - "db:db"
+      - db
+    environment:
+      PMA_HOST: db
+      PMA_ARBITRARY: 1
     ports:
       - "7643:80"
