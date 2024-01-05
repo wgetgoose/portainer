@@ -23,7 +23,7 @@ services:
       # A timezone http://php.net/timezones (default is UTC)
       TZ: America/Los_Angeles
       # Cron job to refresh feeds at specified minutes
-      CRON_MIN: '2,32'
+      CRON_MIN: '*/5'
       # 'development' for additional logs; default is 'production'
       # FRESHRSS_ENV: development
       # Optional advanced parameter controlling the internal Apache listening port
