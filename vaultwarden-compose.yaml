@@ -2,7 +2,8 @@ version: "3.5"
 services:
   postgres:
     image: postgres:16-alpine
-    env_file: .env
+    environment:
+      - POSTGRES_PASSWORD:${POSTGRES_PASSWORD}
     restart: always
     volumes:
       - ${DBDIR}:/var/lib/postgresql/data
