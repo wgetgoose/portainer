@@ -2,13 +2,12 @@ version: "3.5"
 services:
   postgres:
     image: postgres:16-alpine
-    environment:
-      - POSTGRES_PASSWORD:${POSTGRES_PASSWORD}
+    env_file: stack.env
     restart: always
     volumes:
       - ${DBDIR}:/var/lib/postgresql/data
   linkwarden:
-    env_file: .env
+    env_file: stack.env
     environment:
       - DATABASE_URL=postgresql://postgres:${POSTGRES_PASSWORD}@postgres:5432/postgres
     restart: always
