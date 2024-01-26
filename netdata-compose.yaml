@@ -12,7 +12,7 @@ services:
     security_opt:
       - apparmor:unconfined
     volumes:
-      - netdataconfig:/etc/netdata
+      - ${CONFIGDIR}:/etc/netdata
       - netdatalib:/var/lib/netdata
       - netdatacache:/var/cache/netdata
       - /etc/passwd:/host/etc/passwd:ro
@@ -26,6 +26,5 @@ services:
       - /run/dbus:/run/dbus:ro
 
 volumes:
-  netdataconfig:
   netdatalib:
   netdatacache:
