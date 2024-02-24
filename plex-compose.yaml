@@ -10,6 +10,6 @@ services:
       - VERSION=docker
       - PLEX_CLAIM=${CLAIM}
     volumes:
-      - ${SYNOLOGY}/plex-conf:/config
+      - ${LOCAL}/plex-config:/config
       - ${SYNOLOGY}/music:/music
     restart: unless-stopped
