@@ -1,6 +1,7 @@
 ---
 services:
   gluetun:
+    container_name: gluetun
     image: qmcgaw/gluetun:latest
     cap_add:
       - NET_ADMIN
@@ -26,4 +27,4 @@ services:
         - /home/carson/Synology/webapps/qbittorrent/config:/config
         - ${SYNOLOGY}:/downloads
     restart: unless-stopped
-    network_mode: "service:gluetun"
+    network_mode: "container:gluetun"
