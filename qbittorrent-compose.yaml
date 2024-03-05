@@ -19,9 +19,9 @@ services:
     cap_add:
       - NET_ADMIN
     ports:
-          - 20480:20480
-          - 6881:6881
-          - 6881:6881/udp
+      - 20480:20480
+      - 6881:6881
+      - 6881:6881/udp
     environment:
       - VPN_SERVICE_PROVIDER=mullvad
       - VPN_TYPE=wireguard
