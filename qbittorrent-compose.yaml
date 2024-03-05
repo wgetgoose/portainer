@@ -12,8 +12,7 @@ services:
       - /home/carson/Synology/webapps/qbittorrent/config:/config
       - ${SYNOLOGY}:/downloads
         restart: unless-stopped
-    network_mode:
-      "service:gluetun"
+    network_mode: "service:gluetun"
   gluetun:
     image: qmcgaw/gluetun
     cap_add:
