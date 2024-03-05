@@ -8,7 +8,7 @@ services:
       - 20480:20480
       - 6881:6881
       - 6881:6881/udp
-     environment:
+    environment:
       - VPN_SERVICE_PROVIDER=mullvad
       - VPN_TYPE=wireguard
       - WIREGUARD_PRIVATE_KEY=${WIREGUARD_KEY}
