@@ -13,7 +13,7 @@ services:
       - VPN_TYPE=wireguard
       - WIREGUARD_PRIVATE_KEY=${WIREGUARD_KEY}
       - WIREGUARD_ADDRESSES=10.69.146.165/32
-      - SERVER_CITIES=Seattle
+      - SERVER_CITIES=Seattle WA
   qbittorrent:
     image: lscr.io/linuxserver/qbittorrent:latest
     container_name: qbittorrent
