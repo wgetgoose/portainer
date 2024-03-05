@@ -12,4 +12,5 @@ services:
     volumes:
       - ${LOCAL}/plex-config:/config
       - ${SYNOLOGY}/music:/music
+      - ${SYNOLOGY}/tv:/tv
     restart: unless-stopped
