@@ -1,5 +1,20 @@
 ---
 services:
+  gluetun:
+    container_name: gluetun
+    image: qmcgaw/gluetun:latest
+    cap_add:
+      - NET_ADMIN
+    ports:
+      - 20480:20480
+      - 6881:6881
+      - 6881:6881/udp
+    environment:
+      - VPN_SERVICE_PROVIDER=mullvad
+      - VPN_TYPE=wireguard
+      - WIREGUARD_PRIVATE_KEY=${WIREGUARD_KEY}
+      - WIREGUARD_ADDRESSES=10.69.146.165/32
+      - SERVER_CITIES=Seattle WA
   qbittorrent:
     image: lscr.io/linuxserver/qbittorrent:latest
     container_name: qbittorrent
@@ -9,10 +24,7 @@ services:
       - TZ=America/Los_Angeles
       - WEBUI_PORT=20480
     volumes:
-      - /home/carson/Synology/webapps/qbittorrent/config:/config
-      - /home/carson/Synology/webapps/qbittorrent/torrents:/downloads
-    ports:
-      - 20480:20480
-      - 6881:6881
-      - 6881:6881/udp
+        - /home/carson/Synology/webapps/qbittorrent/config:/config
+        - ${SYNOLOGY}:/downloads
     restart: unless-stopped
+    network_mode: "container:gluetun"
