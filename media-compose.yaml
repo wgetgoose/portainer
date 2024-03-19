@@ -24,6 +24,7 @@ services:
       - TZ=America/Los_Angeles
     volumes:
       - ${LOCALCONFIG}/sonarr:/config
+      - ${SYNOLOGY}:/data
     ports:
       - 8989:8989
     restart: unless-stopped
@@ -39,4 +40,18 @@ services:
       - ${SYNOLOGY}:/data
     ports:
       - 7878:7878
+    restart: unless-stopped
+  jackett:
+    image: lscr.io/linuxserver/jackett:latest
+    container_name: jackett
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Los_Angeles
+      - AUTO_UPDATE=true #optional
+      - RUN_OPTS= #optional
+    volumes:
+      - ${LOCALCONFIG}/jackett:/config
+    ports:
+      - 9117:9117
     restart: unless-stopped
