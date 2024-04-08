@@ -2,7 +2,7 @@
 services:
   gluetun:
     container_name: gluetun
-    image: qmcgaw/gluetun:latest
+    image: qmcgaw/gluetun:v3
     cap_add:
       - NET_ADMIN
     ports:
@@ -25,6 +25,6 @@ services:
       - WEBUI_PORT=20480
     volumes:
         - /home/carson/Synology/webapps/qbittorrent/config:/config
-        - ${SYNOLOGY}:/downloads
+        - ${SYNOLOGY}:/data/torrents
     restart: unless-stopped
     network_mode: "container:gluetun"
