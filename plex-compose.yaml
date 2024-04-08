@@ -13,4 +13,5 @@ services:
       - ${LOCAL}/plex-config:/config
       - ${SYNOLOGY}/music:/music
       - ${SYNOLOGY}/tv:/tv
+      - ${SYNOLOGY}/movies:/movies
     restart: unless-stopped
