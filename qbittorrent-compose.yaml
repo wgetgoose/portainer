@@ -25,8 +25,8 @@ services:
       - TZ=America/Los_Angeles
       - WEBUI_PORT=20480
     volumes:
-        - /home/carson/Synology/webapps/qbittorrent/config:/config
-        - ${SYNOLOGY}:/data/torrents
+      - /home/carson/Synology/webapps/qbittorrent/config:/config
+      - ${SYNOLOGY}:/data/torrents
     restart: unless-stopped
     network_mode: "container:gluetun"
   soulseek:
@@ -41,4 +41,5 @@ services:
       - ${SOULSEEK}/downloads:/data/Soulseek Downloads
       - ${SOULSEEK}/shared:/data/Soulseek Shared Folder
       - /home/carson/mediaserver_local/configs/soulseek/logs:/data/Soulseek Chat Logs
-    
+    network_mode: "container:gluetun"
+    restart: unless-stopped
