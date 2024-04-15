@@ -33,8 +33,8 @@ services:
     image: realies/soulseek:latest
     container_name: soulseek
     environment:
-      - PUID=1000
-      - PGID=1000
+      - PUID=1026
+      - PGID=1026
       - TZ=America/Los_Angeles
     volumes:
       - /home/carson/mediaserver_local/configs/soulseek/appdata:/data/.SoulseekQt
