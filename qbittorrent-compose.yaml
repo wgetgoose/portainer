@@ -33,13 +33,13 @@ services:
     image: realies/soulseek:latest
     container_name: soulseek
     environment:
-      - PUID=1026
-      - PGID=1026
+      - PUID=1000
+      - PGID=1000
       - TZ=America/Los_Angeles
     volumes:
       - /home/carson/mediaserver_local/configs/soulseek/appdata:/data/.SoulseekQt
       - ${SOULSEEK}/downloads:/data/Soulseek Downloads
-      - /home/carson/mediaserver/media:/data/Soulseek Shared Folder
+      - /home/carson/Synology/mediaserver/media:/data/Soulseek Shared Folder
       - /home/carson/mediaserver_local/configs/soulseek/logs:/data/Soulseek Chat Logs
     network_mode: "container:gluetun"
     restart: unless-stopped
