@@ -5,6 +5,8 @@ services:
     image: qmcgaw/gluetun:v3
     cap_add:
       - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
     ports:
       - 20480:20480 # qbittorrent
       - 6881:6881
