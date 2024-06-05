@@ -14,8 +14,8 @@ services:
       - VPN_SERVICE_PROVIDER=mullvad
       - VPN_TYPE=wireguard
       - WIREGUARD_PRIVATE_KEY=${WIREGUARD_KEY}
-      - WIREGUARD_ADDRESSES=10.69.146.165/32
-      - SERVER_CITIES=Seattle WA
+      - WIREGUARD_ADDRESSES=10.69.149.121/32
+      - SERVER_CITIES=Los Angeles CA
   qbittorrent:
     image: lscr.io/linuxserver/qbittorrent:latest
     container_name: qbittorrent
