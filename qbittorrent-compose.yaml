@@ -29,17 +29,17 @@ services:
       - ${SYNOLOGY}:/data/torrents
     restart: unless-stopped
     network_mode: "container:gluetun"
-  soulseek:
-    image: realies/soulseek:latest
-    container_name: soulseek
-    environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=America/Los_Angeles
-    volumes:
-      - /home/carson/mediaserver_local/configs/soulseek/appdata:/data/.SoulseekQt
-      - ${SOULSEEK}/downloads:/data/Soulseek Downloads
-      - /home/carson/Synology/mediaserver/media:/data/Soulseek Shared Folder
-      - /home/carson/mediaserver_local/configs/soulseek/logs:/data/Soulseek Chat Logs
-    network_mode: "container:gluetun"
-    restart: unless-stopped
+  #soulseek:
+  #  image: realies/soulseek:latest
+  #  container_name: soulseek
+  #  environment:
+  #    - PUID=1000
+  #    - PGID=1000
+  #    - TZ=America/Los_Angeles
+  #  volumes:
+  #    - /home/carson/mediaserver_local/configs/soulseek/appdata:/data/.SoulseekQt
+  #    - ${SOULSEEK}/downloads:/data/Soulseek Downloads
+  #    - /home/carson/Synology/mediaserver/media:/data/Soulseek Shared Folder
+  #    - /home/carson/mediaserver_local/configs/soulseek/logs:/data/Soulseek Chat Logs
+  #  network_mode: "container:gluetun"
+  #  restart: unless-stopped
