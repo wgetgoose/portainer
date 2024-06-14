@@ -1,0 +1,46 @@
+version: 2
+ 
+global:
+  forget:
+    keep-daily: 2
+locations:
+  radarr:
+    from: /home/carson/mediaserver_local/configs/radarr
+    to: remote
+    hooks:
+      before:
+        docker stop radarr 
+      after:
+        docker start radarr 
+    cron: '0 4 * * *'
+  sonarr:
+    from: /home/carson/mediaserver_local/configs/sonarr
+    to: remote
+    hooks:
+      before:
+        docker stop sonarr
+      after:
+        docker start sonarr
+    cron: '5 4 * * *'
+  jackett:
+    from: /home/carson/mediaserver_local/configs/jackett
+    to: remote
+    hooks:
+      before:
+        docker stop jackett 
+      after:
+        docker start jackett 
+    cron: '10 4 * * *'
+  plex:
+    from: /home/carson/mediaserver_local/configs/plex
+    to: remote
+    hooks:
+      before:
+        docker stop plex
+      after:
+        docker start plex
+    cron: '15 4 * * *'
+backends:
+  remote:
+    type: local
+    path: /home/carson/Synology/autorestic_hades
