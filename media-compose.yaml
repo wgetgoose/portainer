@@ -56,7 +56,7 @@ services:
       - 9117:9117
     restart: unless-stopped
   flaresolverr:
-    # DockerHub mirror flaresolverr/flaresolverr:latest
+    # Using fork of flaresolverr for TL
     image: 21hsmw/flaresolverr:nodriver 
     container_name: flaresolverr
     environment:
