@@ -65,5 +65,5 @@ services:
       - CAPTCHA_SOLVER=${CAPTCHA_SOLVER:-none}
       - TZ=America/Los_Angeles
     ports:
-      - "${PORT:-8191}:8181"
+      - "${PORT:-8191}:8191"
     restart: unless-stopped
