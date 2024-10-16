@@ -68,3 +68,15 @@ services:
     ports:
       - "${PORT:-8191}:8191"
     restart: unless-stopped
+  ombi:
+    image: linuxserver/ombi
+    container_name: ombi
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Los_Angeles
+    volumes:
+      - ${LOCALCONFIG}/ombi:/config
+    ports:
+      - 3579:3579
+    restart: unless-stopped
