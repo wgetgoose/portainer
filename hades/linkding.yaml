@@ -1,0 +1,12 @@
+services:
+  linkding:
+    container_name: "linkding"
+    image: sissbruecker/linkding:latest
+    environment:
+      - LD_SUPERUSER_NAME=${NAME}
+      - LD_SUPERUSER_PASSWORD=${PASS}
+    ports:
+      - "3000:9090"
+    volumes:
+      - "/home/carson/webapps/linkding:/etc/linkding/data"
+    restart: unless-stopped
