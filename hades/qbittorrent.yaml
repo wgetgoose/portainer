@@ -11,23 +11,23 @@ services:
       - 20480:20480 # qbittorrent
       - 6881:6881
       - 6881:6881/udp
-      - 6080:6080 # soulseek
+      # - 6080:6080 # soulseek
     environment:
       - VPN_SERVICE_PROVIDER=mullvad
       - VPN_TYPE=wireguard
       - WIREGUARD_PRIVATE_KEY=${WIREGUARD_KEY}
-      - WIREGUARD_ADDRESSES=10.69.149.121/32
-      - SERVER_CITIES=Los Angeles CA
+      - WIREGUARD_ADDRESSES=${WIREGUARD_ADDRESSES}
+      - SERVER_CITIES=${SERVER_CITIES}
   qbittorrent:
     image: lscr.io/linuxserver/qbittorrent:latest
     container_name: qbittorrent
     environment:
       - PUID=1000
       - PGID=1000
-      - TZ=America/Los_Angeles
+      - TZ=${TZ}
       - WEBUI_PORT=20480
     volumes:
-      - /home/carson/Synology/webapps/qbittorrent/config:/config
+      - ${LOCALCONFIG}:/config
       - ${SYNOLOGY}:/data/torrents
     restart: unless-stopped
     network_mode: "container:gluetun"
