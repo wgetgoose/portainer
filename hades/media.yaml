@@ -21,7 +21,7 @@ services:
     environment:
       - PUID=1000
       - PGID=1000
-      - TZ=America/Los_Angeles
+      - TZ=${TZ}
     volumes:
       - ${LOCALCONFIG}/sonarr:/config
       - ${SYNOLOGY}:/data
@@ -34,7 +34,7 @@ services:
     environment:
       - PUID=1000
       - PGID=1000
-      - TZ=America/Los_Angeles
+      - TZ={TZ}
     volumes:
       - ${LOCALCONFIG}/radarr:/config
       - ${SYNOLOGY}:/data
@@ -47,7 +47,7 @@ services:
     environment:
       - PUID=1000
       - PGID=1000
-      - TZ=America/Los_Angeles
+      - TZ=${TZ}
       - AUTO_UPDATE=true #optional
       - RUN_OPTS= #optional
     volumes:
@@ -74,7 +74,7 @@ services:
     environment:
       - PUID=1000
       - PGID=1000
-      - TZ=America/Los_Angeles
+      - TZ=${TZ}
     volumes:
       - ${LOCALCONFIG}/ombi:/config
     ports:
