@@ -16,7 +16,7 @@ services:
       # A list of hostnames allowed in HTTP requests. Required for reverse proxy configuration.
       - READECK_ALLOWED_HOSTS=read.carsonferreira.com
     volumes:
-      - /home/carson/webapps/readeck:/readeck
+      - ${LOCALCONFIG}:/readeck
     restart: unless-stopped
     healthcheck:
       test: ["CMD", "/bin/readeck", "healthcheck", "-config", "config.toml"]
