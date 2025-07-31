@@ -11,7 +11,7 @@ services:
       - 20480:20480 # qbittorrent
       - 6881:6881
       - 6881:6881/udp
-      # - 6080:6080 # soulseek
+      - 6080:6080 # soulseek
     environment:
       - VPN_SERVICE_PROVIDER=mullvad
       - VPN_TYPE=wireguard
@@ -30,7 +30,7 @@ services:
       - ${LOCALCONFIG}:/config
       - ${SYNOLOGY}:/data/torrents
     restart: unless-stopped
-    network_mode: "container:gluetun"
+    network_mode: "container:gluetun"  
   #soulseek:
   #  image: realies/soulseek:latest
   #  container_name: soulseek
