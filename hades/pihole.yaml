@@ -11,7 +11,7 @@ services:
       - "4720:80/tcp"
     environment:
       TZ: 'America/Los_Angeles'
-      WEBPASSWORD: ${PASS}
+      FTLCONF_webserver_api_password: ${PASS}
     # Volumes store your data between container upgrades
     volumes:
       - './etc-pihole:/etc/pihole'
