@@ -1,0 +1,27 @@
+version: "3"
+services:
+  uptime-kuma:
+    image: louislam/uptime-kuma:1
+    container_name: uptime-kuma
+    restart: unless-stopped
+    ports:
+      - "7644:3001"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock 
+      - uptime-kuma:/app/data
+  ntfy:
+    image: binwiederhier/ntfy
+    container_name: ntfy
+    command:
+      - serve
+    environment:
+      - "TZ=America/Los_Angeles"
+    volumes:
+      - /var/cache/ntfy:/var/cache/ntfy
+      - ntfy:/etc/ntfy
+    ports:
+      - "7655:80"
+    restart: unless-stopped
+volumes:
+  ntfy:
+  uptime-kuma:
