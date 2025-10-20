@@ -6,7 +6,7 @@ services:
     environment:
       - PUID=1000
       - PGID=1000
-      - TZ=America/Los_Angeles
+      - TZ=${TZ}
       - VERSION=docker
       - PLEX_CLAIM=${CLAIM}
     volumes:
@@ -34,7 +34,7 @@ services:
     environment:
       - PUID=1000
       - PGID=1000
-      - TZ={TZ}
+      - TZ=${TZ}
     volumes:
       - ${LOCALCONFIG}/radarr:/config
       - ${SYNOLOGY}:/data
@@ -63,7 +63,7 @@ services:
       - LOG_LEVEL=${LOG_LEVEL:-info}
       - LOG_HTML=${LOG_HTML:-false}
       - CAPTCHA_SOLVER=${CAPTCHA_SOLVER:-none}
-      - TZ=America/Los_Angeles
+      - TZ=${TZ}
       - DRIVER=nodriver
     ports:
       - "${PORT:-8191}:8191"
