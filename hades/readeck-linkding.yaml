@@ -1,5 +1,5 @@
 services:
-  app:
+  readeck:
     image: codeberg.org/readeck/readeck:latest
     container_name: readeck
     ports:
@@ -23,3 +23,14 @@ services:
       interval: 30s
       timeout: 2s
       retries: 3
+  linkding:
+    container_name: "linkding"
+    image: sissbruecker/linkding:latest
+    environment:
+      - LD_SUPERUSER_NAME=${NAME}
+      - LD_SUPERUSER_PASSWORD=${PASS}
+    ports:
+      - "3000:9090"
+    volumes:
+      - ${LOCALCONFIG}:/etc/linkding/data
+    restart: unless-stopped
