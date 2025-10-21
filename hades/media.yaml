@@ -11,9 +11,9 @@ services:
       - PLEX_CLAIM=${CLAIM}
     volumes:
       - ${LOCALCONFIG}/plex:/config
-      - ${SYNOLOGY}/media/music:/music
-      - ${SYNOLOGY}/media/tv:/tv
-      - ${SYNOLOGY}/media/movies:/movies
+      - ${SYNOLOGY}/music:/music
+      - ${SYNOLOGY}/tv:/tv
+      - ${SYNOLOGY}/movies:/movies
     restart: unless-stopped
   sonarr:
     image: lscr.io/linuxserver/sonarr:latest
