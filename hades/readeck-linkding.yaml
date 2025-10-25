@@ -16,7 +16,7 @@ services:
       # A list of hostnames allowed in HTTP requests. Required for reverse proxy configuration.
       - READECK_ALLOWED_HOSTS=read.carsonferreira.com
     volumes:
-      - ${LOCALCONFIG}:/readeck
+      - ${LOCALCONFIG}/readeck:/readeck
     restart: unless-stopped
     healthcheck:
       test: ["CMD", "/bin/readeck", "healthcheck", "-config", "config.toml"]
@@ -32,5 +32,5 @@ services:
     ports:
       - "3000:9090"
     volumes:
-      - ${LOCALCONFIG}:/etc/linkding/data
+      - ${LOCALCONFIG}/linkding:/etc/linkding/data
     restart: unless-stopped
