@@ -43,6 +43,9 @@ services:
       - EMAIL=${EMAIL:?Env var EMAIL is not set.}
       # Nickname with default value: "DockerObfs4Bridge"
       - NICKNAME=${NICKNAME:-DockerObfs4Bridge}
+      # Extra Settings
+      - OBFS4_ENABLE_ADDITIONAL_VARIABLES=1
+      - OBFS4V_AddressDisableIPv6=1
     volumes:
       - data:/var/lib/tor
     ports:
