@@ -34,3 +34,15 @@ services:
     volumes:
       - ${LOCALCONFIG}/linkding:/etc/linkding/data
     restart: unless-stopped
+  freshrss:
+    image: lscr.io/linuxserver/freshrss:latest
+    container_name: freshrss
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=${TZ}
+    volumes:
+      - ${LOCALCONFIG}/freshrss:/config
+    ports:
+      - 2464:80
+    restart: unless-stopped
