@@ -31,9 +31,20 @@
             - title: Immich
               url: https://photos.carsonferreira.com
               icon: sh:immich
+            # these Wireguard addresses need to be env vars at some point
+            # gonna have to change them when I go back home
             - title: Radarr
-              url: http://10.1.0.2:8989
+              url: http://10.1.0.2:7878
               icon: sh:radarr
+            - title: Sonarr
+              url: http://10.1.0.2:8989
+              icon: sh:sonarr
+            - title: qBittorrent
+              url: http://10.1.0.2:20480
+              icon: sh:qBittorrent
+            - title: Portainer
+              url: https://10.1.0.2:9443
+              icon: sh:portainer
         - type: server-stats
           servers:
             - type: local
