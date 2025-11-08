@@ -1,0 +1,20 @@
+- name: Home2
+  columns:
+    - size: small
+      widgets:
+        - type: calendar
+          first-day-of-week: monday
+        - type: weather
+          units: imperial
+          hour-format: 24h
+          location: Edinburgh, Scotland
+    - size: full
+      widgets:
+        type: markets
+        markets:
+          - symbol: SPY
+            name: S&P 500
+          - symbol: NASDAQ
+            name: NASDAQ
+          - symbol: ^VIX
+            name: VIX
