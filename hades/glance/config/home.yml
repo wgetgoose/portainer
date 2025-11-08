@@ -12,13 +12,14 @@
       widgets:
         - type: bookmarks
           groups:
-            - links:
-              - title: Protonmail
-                url: https://mail.proton.me/u/0/inbox
-                icon: sh:proton-mail
-              - title: Edinburgh myEd
-                url: https://www.myed.ed.ac.uk/uPortal/Login?refUrl=%2Fmyed-progressive%2F
-                icon: https://upload.wikimedia.org/wikipedia/en/thumb/7/7a/University_of_Edinburgh_ceremonial_roundel.svg/1280px-University_of_Edinburgh_ceremonial_roundel.svg.png
+            - title: Apps
+              links:
+                - title: Protonmail
+                  url: https://mail.proton.me/u/0/inbox
+                  icon: sh:proton-mail
+                - title: Edinburgh myEd
+                  url: https://www.myed.ed.ac.uk/uPortal/Login?refUrl=%2Fmyed-progressive%2F
+                  icon: https://upload.wikimedia.org/wikipedia/en/thumb/7/7a/University_of_Edinburgh_ceremonial_roundel.svg/1280px-University_of_Edinburgh_ceremonial_roundel.svg.png
             - title: News
               links:
                 - title: AP News
