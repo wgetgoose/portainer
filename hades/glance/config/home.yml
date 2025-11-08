@@ -32,7 +32,7 @@
               url: https://photos.carsonferreira.com
               icon: sh:immich
             - title: Radarr
-              url: 10.1.0.2:8989
+              url: http://10.1.0.2:8989
               icon: sh:radarr
         - type: server-stats
           servers:
