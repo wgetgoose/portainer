@@ -29,6 +29,12 @@
               name: NASDAQ
             - symbol: ^VIX
               name: VIX
+            - symbol: EUAD
+              name: STOXX Europe Defense
+            - symbol: VGK
+              name: Vanguard Europe ETF
+            - symbol: GC=F
+              name: Gold
         - type: monitor
           cache: 1m
           title: Services
