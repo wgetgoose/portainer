@@ -10,6 +10,15 @@
           location: Edinburgh, United Kingdom
     - size: full
       widgets:
+        - type: bookmarks
+          groups:
+            - links:
+              - title: Protonmail
+                url: https://mail.proton.me/u/0/inbox
+                icon: sh:proton-mail
+              - title: Edinburgh myEd
+                url: https://www.myed.ed.ac.uk/uPortal/Login?refUrl=%2Fmyed-progressive%2F
+                icon: https://www.myed.ed.ac.uk/myed-progressive/assets/logo-DT_0UmjE.png
         - type: markets
           chart-link-template: https://finance.yahoo.com/quote/{SYMBOL}/
           symbol-link-template: https://finance.yahoo.com/quote/{SYMBOL}/
