@@ -40,3 +40,4 @@
               mountpoints:
                 "/app/config":
                   name: Root
+                  hide: false
