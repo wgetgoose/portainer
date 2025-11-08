@@ -10,11 +10,11 @@
           location: Edinburgh, United Kingdom
     - size: full
       widgets:
-        type: markets
-        markets:
-          - symbol: SPY
-            name: S&P 500
-          - symbol: NASDAQ
-            name: NASDAQ
-          - symbol: ^VIX
-            name: VIX
+        - type: markets
+          markets:
+            - symbol: SPY
+              name: S&P 500
+            - symbol: NASDAQ
+              name: NASDAQ
+            - symbol: ^VIX
+              name: VIX
