@@ -18,7 +18,7 @@
                 icon: sh:proton-mail
               - title: Edinburgh myEd
                 url: https://www.myed.ed.ac.uk/uPortal/Login?refUrl=%2Fmyed-progressive%2F
-                icon: https://www.myed.ed.ac.uk/myed-progressive/assets/logo-DT_0UmjE.png
+                icon: https://upload.wikimedia.org/wikipedia/en/thumb/7/7a/University_of_Edinburgh_ceremonial_roundel.svg/1280px-University_of_Edinburgh_ceremonial_roundel.svg.png
         - type: markets
           chart-link-template: https://finance.yahoo.com/quote/{SYMBOL}/
           symbol-link-template: https://finance.yahoo.com/quote/{SYMBOL}/
