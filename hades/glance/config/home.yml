@@ -41,10 +41,7 @@
               icon: sh:sonarr
             - title: qBittorrent
               url: http://10.1.0.2:20480
-              icon: sh:qBittorrent
-            - title: Portainer
-              url: https://10.1.0.2:9443
-              icon: sh:portainer
+              icon: sh:qbittorrent
         - type: server-stats
           servers:
             - type: local
