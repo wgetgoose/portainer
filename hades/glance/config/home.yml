@@ -28,6 +28,9 @@
             - title: Plex
               url: https://plex.carsonferreira.com
               icon: sh:plex
+              # plex returns 401 unauthorized when up
+              alt-status-codes:
+                - 401
             - title: Immich
               url: https://photos.carsonferreira.com
               icon: sh:immich
@@ -42,6 +45,10 @@
             - title: qBittorrent
               url: http://10.1.0.2:20480
               icon: sh:qbittorrent
+            - title: Portainer
+              url: https://10.1.0.2:9443
+              icon: sh:portainer
+              allow-insecure: true
         - type: server-stats
           servers:
             - type: local
