@@ -47,7 +47,7 @@
     - size: small
       widgets:
         - type: weather
-          location: Edinburgh, Scotland
+          location: Edinburgh, United Kingdom 
           units: imperial # alternatively "imperial"
           hour-format: 24h # alternatively "24h"
           # Optionally hide the location from being displayed in the widget

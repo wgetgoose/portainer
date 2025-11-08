@@ -7,7 +7,7 @@
         - type: weather
           units: imperial
           hour-format: 24h
-          location: Edinburgh, Scotland
+          location: Edinburgh, United Kingdom
     - size: full
       widgets:
         type: markets
