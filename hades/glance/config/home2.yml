@@ -14,7 +14,22 @@
           markets:
             - symbol: SPY
               name: S&P 500
-            - symbol: NASDAQ
+            - symbol: ^IXIC 
               name: NASDAQ
             - symbol: ^VIX
               name: VIX
+        - type: monitor
+          cache: 1m
+          title: Services
+          sites:
+            - title: Seafile 
+              url: https://seafile.carsonferreira.com
+            - title: Plex
+              url: https://plex.carsonferreira.com
+            - title: Immich
+              url: https://photos.carsonferreira.com
+              icon: /assets/immich-logo.png
+        - type: server-stats
+          servers:
+            - type: local
+              name: Hades
