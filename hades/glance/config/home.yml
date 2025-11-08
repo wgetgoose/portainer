@@ -35,7 +35,8 @@
           servers:
             - type: local
               name: Hades
+              # because root is not mounted in docker, use an alternative dir to see disk usage
+              hide-mountpoints-by-default: true
               mountpoints:
-                # because root is not mounted in docker, use an alternative dir to see disk usage
                 "/app/config":
                   name: Root
