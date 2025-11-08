@@ -1,4 +1,4 @@
-- name: Home2
+- name: Home 
   columns:
     - size: small
       widgets:
