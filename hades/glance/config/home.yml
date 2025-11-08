@@ -19,6 +19,26 @@
               - title: Edinburgh myEd
                 url: https://www.myed.ed.ac.uk/uPortal/Login?refUrl=%2Fmyed-progressive%2F
                 icon: https://upload.wikimedia.org/wikipedia/en/thumb/7/7a/University_of_Edinburgh_ceremonial_roundel.svg/1280px-University_of_Edinburgh_ceremonial_roundel.svg.png
+            - title: News
+              links:
+                - title: AP News
+                  url: https://apnews.com/
+                  icon: https://assets.apnews.com/19/66/bc546486408c8595f01753a9fbeb/ap-logo-176-by-208.svg
+                - title: Financial Times
+                  url: https://ft.com
+                  icon: https://www.ft.com/__origami/service/image/v2/images/raw/ftlogo-v1%3Abrand-ft-logo-square-coloured?source=image-url-builder
+                - title: BBC
+                  url: https://bbc.co.uk
+                  icon: https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/BBC_Logo_2021.svg/2560px-BBC_Logo_2021.svg.png 
+                - title: New York Times
+                  url: https://nytimes.com
+                  icon: sh:the-new-york-times
+                - title: Reuters
+                  url: https://reuters.com
+                  icon: https://static.wikia.nocookie.net/logopedia/images/5/53/Reuters_2008_vertical.svg/revision/latest?cb=20240525053744
+                - title: Wall Street Journal
+                  url: https://wsj.com
+                  icon: https://images.icon-icons.com/2699/PNG/512/wsj_logo_icon_168755.png
         - type: markets
           chart-link-template: https://finance.yahoo.com/quote/{SYMBOL}/
           symbol-link-template: https://finance.yahoo.com/quote/{SYMBOL}/
