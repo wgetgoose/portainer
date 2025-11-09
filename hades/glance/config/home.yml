@@ -30,7 +30,7 @@
                   icon: https://www.ft.com/__origami/service/image/v2/images/raw/ftlogo-v1%3Abrand-ft-logo-square-coloured?source=image-url-builder
                 - title: BBC
                   url: https://bbc.co.uk
-                  icon: https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/BBC_Logo_2021.svg/2560px-BBC_Logo_2021.svg.png 
+                  icon: https://icon2.cleanpng.com/20180629/fw/aayfx7yzb.webp
                 - title: New York Times
                   url: https://nytimes.com
                   icon: sh:the-new-york-times
@@ -56,6 +56,31 @@
               name: Vanguard Europe ETF
             - symbol: GC=F
               name: Gold
+        - type: videos
+          style: grid-cards
+          channels:
+            # Big A
+            - UCdBXOyqr8cDshsp7kcKDAkg
+            # Atrioc
+            - UCgv4dPk_qZNAbUW9WkuLPSA
+            # GOAT (basketball)
+            - UC27JCqpAz5DZHS5uYiCMfOw
+            # NFL Highlights
+            - UCDVYQ4Zhbm3S2dlz7P1GBDg
+            # F1 Highlights
+            - UCB_qr75-ydFVKSF9Dmo6izg
+            # Fireship (tech news)
+            - UCsBjURrPoezykLs9EqgamOA
+            # Hank Green
+            - UCOT2iLov0V7Re7ku_3UBtcQ
+            # SciShow
+            - UCZYTClx2T1of7BRZ86-8fow
+            # Good Work
+            - UC_-hYjoNe4PJNFa9iZ4lraA
+            # Channel 5
+            - UC-AQKm7HUNMmxjdS371MSwg
+            # Jolly
+            - UCOgGAfSUy5LvEyVS_LF5kdw
         - type: monitor
           cache: 1m
           title: Services
