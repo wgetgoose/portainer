@@ -83,6 +83,8 @@
               - UC-AQKm7HUNMmxjdS371MSwg
               # Jolly
               - UCOgGAfSUy5LvEyVS_LF5kdw
+          - type: hacker-news
+          - type: lobsters
         - type: monitor
           cache: 1m
           title: Services
