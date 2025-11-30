@@ -4,8 +4,8 @@ services:
     container_name: plex
     network_mode: host
     environment:
-      - PUID=1000
-      - PGID=1000
+      - PUID=${PUID}
+      - PGID=${PGID}
       - TZ=${TZ}
       - VERSION=docker
       - PLEX_CLAIM=${CLAIM}
@@ -19,8 +19,8 @@ services:
     image: lscr.io/linuxserver/sonarr:latest
     container_name: sonarr
     environment:
-      - PUID=1000
-      - PGID=1000
+      - PUID=${PUID}
+      - PGID=${PGID}
       - TZ=${TZ}
     volumes:
       - ${LOCALCONFIG}/sonarr:/config
@@ -32,8 +32,8 @@ services:
     image: lscr.io/linuxserver/radarr:latest
     container_name: radarr
     environment:
-      - PUID=1000
-      - PGID=1000
+      - PUID=${PUID}
+      - PGID=${PGID}
       - TZ=${TZ}
     volumes:
       - ${LOCALCONFIG}/radarr:/config
@@ -41,12 +41,25 @@ services:
     ports:
       - 7878:7878
     restart: unless-stopped
+  bazarr:
+    image: lscr.io/linuxserver/bazarr:latest
+    container_name: bazarr
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+    volumes:
+      - ${LOCALCONFIG}/bazarr:/config
+      - ${SYNOLOGY}:/data #optional
+    ports:
+      - 6767:6767
+    restart: unless-stopped
   jackett:
     image: lscr.io/linuxserver/jackett:latest
     container_name: jackett
     environment:
-      - PUID=1000
-      - PGID=1000
+      - PUID=${PUID}
+      - PGID=${PGID}
       - TZ=${TZ}
       - AUTO_UPDATE=true #optional
       - RUN_OPTS= #optional
@@ -72,8 +85,8 @@ services:
     image: linuxserver/ombi
     container_name: ombi
     environment:
-      - PUID=1000
-      - PGID=1000
+      - PUID=${PUID}
+      - PGID=${PGID}
       - TZ=${TZ}
     volumes:
       - ${LOCALCONFIG}/ombi:/config
