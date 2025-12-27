@@ -23,7 +23,7 @@ services:
       # Have gluetun pull from available VPN servers list
       - UPDATER_PERIOD=12h
     volumes:
-      - /home/carson/webapps_local/gluetun:/gluetun
+      - ${LOCALCONFIG}/gluetun:/gluetun
   qbittorrent:
     image: lscr.io/linuxserver/qbittorrent:latest
     container_name: qbittorrent
@@ -34,7 +34,7 @@ services:
       - WEBUI_PORT=20480
       - TORRENTING_PORT=${WIREGUARD_IN_PORT}
     volumes:
-      - ${LOCALCONFIG}:/config
+      - ${LOCALCONFIG}/qbittorrent:/config
       - ${SYNOLOGY}:/data/torrents
     restart: unless-stopped
     network_mode: "container:gluetun"
