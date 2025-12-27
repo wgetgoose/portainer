@@ -1,0 +1,15 @@
+services:
+  soulseek:
+    image: realies/soulseek:latest
+    container_name: soulseek
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Los_Angeles
+    volumes:
+      - ${LOCALCONFIG}/soulseek/appdata:/data/.SoulseekQt
+      - ${LOCALCONFIG}/soulseek/logs:/data/Soulseek Chat Logs
+      - ${SYNOLOGY}/soulseek/downloads:/data/Soulseek Downloads
+      - ${MEDIA}:/data/Soulseek Shared Folder
+    network_mode: "container:gluetun"
+    restart: unless-stopped
