@@ -34,6 +34,7 @@ services:
     image: thetorproject/obfs4-bridge:latest
     networks:
       - obfs4_bridge_external_network
+    container_name: tor_bridge
     environment:
       # Exit with an error message if OR_PORT is unset or empty.
       - OR_PORT=${OR_PORT:?Env var OR_PORT is not set.}
