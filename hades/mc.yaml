@@ -7,11 +7,11 @@ services:
     volumes:
       - ${DATA}:/data
     environment:
-      - EULA: "true"
-      - VERSION: LATEST
-      - MOTD: ${MOTD}
-      - DIFFICULTY: normal
-      - MAX-PLAYERS: 9
+      EULA: "true"
+      VERSION: LATEST
+      MOTD: ${MOTD}
+      DIFFICULTY: normal
+      MAX_PLAYERS: "9"
     stdin_open: true
     tty: true
     restart: unless-stopped
