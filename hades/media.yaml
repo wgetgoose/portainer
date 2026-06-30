@@ -26,22 +26,34 @@ services:
     # Optional - may be necessary for docker healthcheck to pass if running in host network mode
     extra_hosts:
       - 'host.docker.internal:host-gateway' 
-  plex:
-    image: linuxserver/plex:latest
-    container_name: plex
-    network_mode: host
+  # plex:
+  #   image: linuxserver/plex:latest
+  #   container_name: plex
+  #   network_mode: host
+  #   environment:
+  #     - PUID=${PUID}
+  #     - PGID=${PGID}
+  #     - TZ=${TZ}
+  #     - VERSION=docker
+  #     - PLEX_CLAIM=${CLAIM}
+  #   volumes:
+  #     - ${LOCALCONFIG}/plex:/config
+  #     - ${SYNOLOGY}/music:/music
+  #     - ${SYNOLOGY}/tv:/tv
+  #     - ${SYNOLOGY}/movies:/movies
+  #   restart: unless-stopped
+  unmanic:
+    container_name: unmanic
+    image: josh5/unmanic:latest
+    ports:
+      - 8888:8888
     environment:
       - PUID=${PUID}
       - PGID=${PGID}
-      - TZ=${TZ}
-      - VERSION=docker
-      - PLEX_CLAIM=${CLAIM}
     volumes:
-      - ${LOCALCONFIG}/plex:/config
-      - ${SYNOLOGY}/music:/music
-      - ${SYNOLOGY}/tv:/tv
-      - ${SYNOLOGY}/movies:/movies
-    restart: unless-stopped
+      - ${LOCALCONFIG}/unmanic/config:/config
+      - ${SYNOLOGY}:/library
+      - ${LOCALCONFIG}/unmanic/cache:/tmp/unmanic
   sonarr:
     image: linuxserver/sonarr:latest
     container_name: sonarr
@@ -108,15 +120,15 @@ services:
     ports:
       - "${PORT:-8191}:8191"
     restart: unless-stopped
-  ombi:
-    image: linuxserver/ombi
-    container_name: ombi
-    environment:
-      - PUID=${PUID}
-      - PGID=${PGID}
-      - TZ=${TZ}
-    volumes:
-      - ${LOCALCONFIG}/ombi:/config
-    ports:
-      - 3579:3579
-    restart: unless-stopped
+  # ombi:
+  #   image: linuxserver/ombi
+  #   container_name: ombi
+  #   environment:
+  #     - PUID=${PUID}
+  #     - PGID=${PGID}
+  #     - TZ=${TZ}
+  #   volumes:
+  #     - ${LOCALCONFIG}/ombi:/config
+  #   ports:
+  #     - 3579:3579
+  #   restart: unless-stopped
