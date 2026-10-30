@@ -8,6 +8,9 @@ services:
       - /dev/net/tun:/dev/net/tun
     ports:
       - 20481:20481 # qbittorrent
+      #soulseek
+      - 6565:6565
+      - 16921:16921
       - ${WIREGUARD_IN_PORT}:${WIREGUARD_IN_PORT} # map airvpn port to qbit port
       - ${WIREGUARD_IN_PORT}:${WIREGUARD_IN_PORT}/udp # map airvpn port to qbit port
     environment:
@@ -19,7 +22,7 @@ services:
       - WIREGUARD_PRESHARED_KEY=${WIREGUARD_PRESHARED_KEY}
       - WIREGUARD_ADDRESSES=${WIREGUARD_ADDRESSES}
       - SERVER_CITIES=${SERVER_CITIES}
-      - FIREWALL_VPN_INPUT_PORTS=${WIREGUARD_IN_PORT}
+      - FIREWALL_VPN_INPUT_PORTS=${FIREWALL_VPN_INPUT_PORTS}
       # Have gluetun pull from available VPN servers list
       - UPDATER_PERIOD=12h
     volumes:
@@ -39,6 +42,62 @@ services:
       - TORRENTING_PORT=${WIREGUARD_IN_PORT}
     volumes:
       - ${LOCALCONFIG}/qbittorrent:/config
-      - ${SYNOLOGY}:/data/torrents
+      - ${SYNOLOGY}/torrents:/data/torrents
     restart: unless-stopped
     network_mode: service:gluetun
+  # nicotine-plus:
+  #   network_mode: service:gluetun
+  #   depends_on:
+  #     gluetun:
+  #       condition: service_healthy
+  #   image: ghcr.io/fletchto99/nicotine-plus-docker:latest
+  #   container_name: nicotine-plus
+  #   environment:
+  #     - PUID=1000
+  #     - PGID=1000
+  #   volumes:
+  #     - ${LOCALCONFIG}/nicotine:/config
+  #     - ${SYNOLOGY}/nicotine/downloads:/data/downloads
+  #     - ${SYNOLOGY}/nicotine/incomplete_downloads:/data/incomplete_downloads
+  #     - ${SYNOLOGY}:/data/share
+  #   shm_size: 1gb
+  #   restart: unless-stopped
+  nicotineplus-proper:
+    image: sirjmann92/nicotineplus-proper:latest
+    container_name: nicotine
+    network_mode: service:gluetun
+    depends_on:
+      gluetun:
+        condition: service_healthy
+    environment:
+      # All environment variables are optional, defaults are listed (TZ, LANG, UMASK, and FORWARD_PORT have no default)
+      - TZ=America/Los_Angeles
+      - LOGIN=goosereborn
+      - PASSW=${PASSWORD}
+      - PUID=1000
+      - PGID=1000
+      - DARKMODE=True
+      #   - LANG=C.UTF-8
+      #   - UMASK=022
+      #   - UPNP=False 
+      #   - AUTO_CONNECT=True
+      #   - TRAY_ICON=False
+      #   - NOTIFY_FILE=False
+      #   - NOTIFY_FOLDER=False
+      #   - NOTIFY_TITLE=False
+      #   - NOTIFY_PM=False
+      #   - NOTIFY_CHATROOM=False
+      #   - NOTIFY_MENTION=False
+      - FORWARD_PORT=16921 # Useful for dynamic port forwarding
+    #   - WEB_UI_PORT=6565 # for custom webUI port assignment. Should match 'port' env variable or VPN webUI port
+    #   - WEB_UI_USER=YourWebUIUsername # for custom webUI basic auth username
+    #   - WEB_UI_PASSWORD=YourWebUIPassword # for custom webUI basic auth password
+    #   - HEALTHCHECK_ENABLED=false # Set to false to disable Docker healthcheck (default: true/enabled)
+    volumes:
+      - ${SYNOLOGY}/nicotine/downloads:/downloads
+      - ${SYNOLOGY}/nicotine/incomplete_downloads:/incomplete
+      - ${SYNOLOGY}:/shared
+      - ${LOCALCONFIG}/nicotine/config:/config # Save your config persistently
+      - ${LOCALCONFIG}/nicotine/:/data # Store your logs, database, and history
+    restart: unless-stopped
+networks: {}
