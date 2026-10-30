@@ -1,0 +1,17 @@
+services:
+  nginx:
+    image: jc21/nginx-proxy-manager:latest
+    restart: unless-stopped
+    container_name: nginx
+    environment:
+      TZ: America/Los_Angeles
+    ports:
+      #- '80:80'
+      - 81:81
+      #- '443:443'
+      #- 25565:25565
+      - 1234:1234
+    volumes:
+      - /home/carson/webapps_local/nginx/data:/data
+      - /home/carson/webapps_local/nginx/encrypt:/etc/letsencrypt
+networks: {}
